@@ -47,14 +47,14 @@ let Task = (i = 0)=>{
     let div2 = document.createElement("div");
     div.className = "task";
     div2.className = "date";
-    let val = 'V';
+    let val = `<i class="fa-solid fa-check"></i>`;
     div.style.backgroundColor ="white";
     if(Tasks[i].saved){
-        val = "H";
+        val = `<i class="fa-solid fa-xmark"></i>`;
         div.style.backgroundColor ="#50e3c2";
     }
 
-    let choix = choices(i,"U", val , 'D');
+    let choix = choices(i,`<i class="fa-solid fa-pen"></i>`, val , `<i class="fa-solid fa-trash"></i>`);
     choix.children[0].setAttribute("onclick" , `update(${i})`)
     choix.children[1].setAttribute("onclick" , `select(${i})`)
     choix.children[2].setAttribute("onclick" , `removeTask(${i})`)
